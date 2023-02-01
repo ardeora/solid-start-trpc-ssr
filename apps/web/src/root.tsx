@@ -13,6 +13,7 @@ import {
   Title,
 } from "solid-start";
 import { trpc, queryClient } from "~/utils/trpc";
+import { QueryClientProvider } from "@adeora/solid-query";
 
 export default function Root() {
   return (
@@ -23,7 +24,7 @@ export default function Root() {
         <Meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Body class="h-full">
-        <trpc.Provider queryClient={queryClient}>
+        <QueryClientProvider client={queryClient}>
           <Suspense>
             <ErrorBoundary>
               <Routes>
@@ -31,7 +32,7 @@ export default function Root() {
               </Routes>
             </ErrorBoundary>
           </Suspense>
-        </trpc.Provider>
+        </QueryClientProvider>
         <Scripts />
       </Body>
     </Html>
