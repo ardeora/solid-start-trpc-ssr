@@ -21,7 +21,7 @@ const Root: VoidComponent = () => {
         <Meta name="description" content="Test" />
         <Link rel="icon" href="/favicon.ico" />
       </Head>
-      <pre>{JSON.stringify(query, null, 2)}</pre>
+      <pre>{JSON.stringify(query.data, null, 2)}</pre>
     </>
   );
 };
